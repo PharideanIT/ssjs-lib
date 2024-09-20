@@ -1,8 +1,10 @@
 /**
- * @copyright   [email360](https://www.email360.io/)
- * @author      [Sascha Huwald](https://www.linkedin.com/in/sascha-huwald/) 
+ * @copyright   [email360](https://www.email360.io/) (until version 2.0.0)
+ *              [Pharidean GmbH](https://www.pharidean.de) (starting with version 2.0.1)
+ * @author      [Sascha Huwald](https://www.linkedin.com/in/sascha-huwald/) (until version 2.0.0)
+ *              Christian Fastner (starting with version 2.0.1)
  * @since       2020
- * @version     2.0.0
+ * @version     2.0.1
  * @license     [MIT](https://github.com/email360/ssjs-lib/blob/master/LICENSE)
  *
  * Collection of wrapper functions for the usage of the Salesforce Marketing Cloud REST API.

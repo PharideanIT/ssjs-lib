@@ -1,15 +1,17 @@
 /**
- * @copyright   {@link https://www.email360.io/|email360}
- * @author      {@link https://www.linkedin.com/in/sascha-huwald/|Sascha Huwald}
+ * @copyright   {@link https://www.email360.io/|email360} (until version 2.0.0)
+ *              {@link https://www.pharidean.de|Pharidean GmbH} (starting with version 2.0.1)
+ * @author      {@link https://www.linkedin.com/in/sascha-huwald/|Sascha Huwald} (until version 2.0.0)
+ *              Christian Fastner (starting with version 2.0.1)
  * @since       2020
- * @version     2.0.0
+ * @version     2.0.1
  * @license     {@link https://github.com/email360/ssjs-lib/blob/master/LICENSE|MIT}
  *
  * Collection of wrapper functions for the usage of Cloudpages.
  *
- * @param {string|object}   [auth]      Defines if the cloudpage should be protected
- *                                      Possible values "jwt", "login".
- * @param {object}          [setting]   Used to update the settings object with a custom setting object
+ * @param {string|object}   [auth]      Defines if the cloudpage should be protected.
+ *                                      Possible values: "jwt", "login".
+ * @param {object}          [setting]   Used to update the settings object with a custom setting object.
  *
  * @example
  * // initialise a new cloudpage instance
@@ -19,9 +21,10 @@
  * var cp = new cloudpage('login');
  *
  * // initialise a new cloudpage instance with a jwt token requirement and a custom key
- * // This is used to limit the token access to only token with the given key 
+ * // This is used to limit the token access to only tokens with the given key 
  * var cp = new cloudpage({jwt:'EMAIL360_INT_PWD'});
  */
+
 function cloudpage(auth,settings) {
     this.settings = _updateSettings(settings);
 
@@ -44,7 +47,7 @@ function cloudpage(auth,settings) {
         jsonBody = postObject;
     }
 
-    this.payload.qs = (isObject(jsonBody)) ? jsonBody : {};
+    this.payload.qs = (isObject(jsonBody) || Array.isArray(jsonBody)) ? jsonBody : {};
 
     /**
      * Wrapper to use for JWT authentication. 
